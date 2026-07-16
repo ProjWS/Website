@@ -1,0 +1,638 @@
+---
+import Base from '../layouts/Base.astro';
+
+const servizi = [
+  {
+    icona: '🌐',
+    titolo: 'Siti web vetrina',
+    testo:
+      'Un sito moderno, veloce e mobile-first per la tua attività: chi sei, cosa fai, dove trovarti. Online in pochi giorni, non mesi.',
+  },
+  {
+    icona: '📱',
+    titolo: 'Menu digitali con QR',
+    testo:
+      'Menu consultabile dal telefono con un QR code brandizzato sul tavolo. Aggiornabile in tempo reale: cambi un prezzo, è già online.',
+  },
+  {
+    icona: '📍',
+    titolo: 'Presenza online',
+    testo:
+      'Profilo Google ottimizzato, mappe, orari, recensioni e social collegati. Farti trovare da chi ti cerca in zona.',
+  },
+  {
+    icona: '🎨',
+    titolo: 'Grafica & materiali',
+    testo:
+      'Loghi, biglietti da visita, locandine e materiali coordinati con il tuo sito. Un\'immagine sola, riconoscibile ovunque.',
+  },
+];
+
+const pacchetti = [
+  {
+    nome: 'Base',
+    prezzo: 'da 490 €',
+    per: 'Per partire con il piede giusto',
+    include: [
+      'Sito vetrina one-page mobile-first',
+      'Dominio e hosting per il primo anno',
+      'Profilo Google Business ottimizzato',
+      'Consegna in 7 giorni lavorativi',
+    ],
+    featured: false,
+  },
+  {
+    nome: 'Pro',
+    prezzo: 'da 890 €',
+    per: 'Il più scelto da bar e ristoranti',
+    include: [
+      'Tutto il pacchetto Base',
+      'Menu digitale con QR code brandizzato',
+      'Fino a 5 pagine (menu, galleria, eventi…)',
+      'QR stampabili per tavoli e vetrina',
+      'Aggiornamenti inclusi per 6 mesi',
+    ],
+    featured: true,
+  },
+  {
+    nome: 'Completo',
+    prezzo: 'da 1.490 €',
+    per: 'Per chi vuole fare sul serio',
+    include: [
+      'Tutto il pacchetto Pro',
+      'Restyling logo e immagine coordinata',
+      'Materiali stampa (biglietti, locandine)',
+      'Setup social + 3 template post',
+      'Assistenza prioritaria per 12 mesi',
+    ],
+    featured: false,
+  },
+];
+---
+
+<Base
+  title="Mens Sana Digital | Siti web e menu digitali per piccole attività"
+  description="Siti web vetrina, menu digitali con QR code, presenza online e grafica per bar, ristoranti e piccole imprese. Pacchetti chiari, consegna rapida, prezzi onesti."
+>
+  <!-- HERO -->
+  <section class="digital-hero">
+    <div class="container">
+      <p class="eyebrow rise" style="--r: 0">Novità · Mens Sana Digital</p>
+      <h1 class="rise" style="--r: 1">
+        La tua attività merita di<br />
+        <span class="glow">farsi trovare online.</span>
+      </h1>
+      <p class="digital-hero__sub rise" style="--r: 2">
+        Siti web, menu digitali e presenza online per bar, ristoranti, negozi e
+        piccole imprese. Pacchetti chiari, consegna rapida, prezzi onesti,
+        e un referente vero che risponde al telefono.
+      </p>
+      <div class="digital-hero__actions rise" style="--r: 3">
+        <a href="#pacchetti" class="btn btn--primary">Vedi i pacchetti</a>
+        <a href="/contatti/" class="btn btn--ghost">Richiedi un preventivo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERCHÉ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Il problema</p>
+        <h2>Il 70% dei tuoi clienti ti cerca prima sul telefono</h2>
+        <p>
+          Se non ti trovano, o trovano un sito vecchio e illeggibile da mobile,
+          vanno dal concorrente. Noi sistemiamo questo, in fretta e senza
+          tecnicismi.
+        </p>
+      </div>
+      <div class="grid grid--2">
+        {servizi.map((s, i) => (
+          <div class="card servizio reveal spot" style={`--d: ${i * 0.08}s`}>
+            <span class="servizio__icona" aria-hidden="true">{s.icona}</span>
+            <div>
+              <h3>{s.titolo}</h3>
+              <p>{s.testo}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIMA / DOPO -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Prima / Dopo</p>
+        <h2>La differenza si vede. Trascina e guarda.</h2>
+        <p>Sposta il cursore: a sinistra un sito come tanti, a destra come lavoriamo noi.</p>
+      </div>
+      <div class="ba reveal" id="ba" style="--pos: 50%">
+        <!-- DOPO (sotto, a destra) -->
+        <div class="ba__pane ba__dopo" aria-hidden="true">
+          <div class="mock mock--new">
+            <div class="mock__bar mock__bar--new"><span class="mock__dot"></span>latuapizzeria.it</div>
+            <div class="mock__body-new">
+              <div class="mock__logo">🍕 Da Gigi</div>
+              <div class="mock__h1">La vera pizza<br />napoletana a Cagliari</div>
+              <div class="mock__cta">Guarda il menu</div>
+              <div class="mock__cards">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- PRIMA (sopra, ritagliato a sinistra) -->
+        <div class="ba__pane ba__prima" aria-hidden="true">
+          <div class="mock mock--old">
+            <div class="mock__bar">www.pizzeria-dagigi-cagliari.altervista.org</div>
+            <div class="mock__body-old">
+              <div class="mock__title-old">~*~ Benvenuti nel Nostro Sito ~*~</div>
+              <div class="mock__img-old">[ foto in caricamento… ]</div>
+              <div class="mock__text-old">
+                <span></span><span></span><span></span><span></span>
+              </div>
+              <div class="mock__link-old">Clicca QUI per il menu (PDF, 14 MB)</div>
+              <div class="mock__counter">Visite: 000481 | Ultimo aggiornamento: 2019</div>
+            </div>
+          </div>
+        </div>
+        <div class="ba__divider" aria-hidden="true"><span class="ba__knob">⇄</span></div>
+        <input
+          type="range"
+          class="ba__range"
+          min="0"
+          max="100"
+          value="50"
+          aria-label="Confronto tra il sito prima e dopo"
+        />
+        <span class="ba__tag ba__tag--prima">Prima</span>
+        <span class="ba__tag ba__tag--dopo">Dopo</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACCHETTI -->
+  <section class="section section--tinted" id="pacchetti">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Pacchetti</p>
+        <h2>Prezzi chiari, zero sorprese</h2>
+        <p>
+          Tre formule "a partire da", IVA esclusa. Ogni progetto viene comunque
+          calibrato sulla tua attività: il preventivo definitivo è sempre
+          gratuito e senza impegno.
+        </p>
+      </div>
+      <div class="grid grid--3 pacchetti">
+        {pacchetti.map((p) => (
+          <article class:list={['card pacchetto reveal spot', { 'pacchetto--featured': p.featured }]}>
+            {p.featured && <span class="pacchetto__tag">Consigliato</span>}
+            <h3>{p.nome}</h3>
+            <p class="pacchetto__per">{p.per}</p>
+            <p class="pacchetto__prezzo">{p.prezzo} <small>+ IVA</small></p>
+            <ul>
+              {p.include.map((voce) => <li>{voce}</li>)}
+            </ul>
+            <a href="/contatti/" class:list={['btn', p.featured ? 'btn--primary' : 'btn--ghost']}>
+              Richiedi {p.nome}
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- COME LAVORIAMO -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Come lavoriamo</p>
+        <h2>Dalla stretta di mano al sito online</h2>
+      </div>
+      <ol class="steps">
+        <li class="reveal">
+          <strong>1. Chiacchierata</strong>
+          <p>Ci racconti la tua attività, di persona o al telefono. Niente questionari infiniti.</p>
+        </li>
+        <li class="reveal">
+          <strong>2. Proposta</strong>
+          <p>Entro 48 ore ricevi proposta e preventivo chiaro, con tempi di consegna.</p>
+        </li>
+        <li class="reveal">
+          <strong>3. Realizzazione</strong>
+          <p>Costruiamo il sito e i materiali. Tu approvi, noi mettiamo online.</p>
+        </li>
+        <li class="reveal">
+          <strong>4. Assistenza</strong>
+          <p>Restiamo il tuo riferimento: aggiornamenti, modifiche e consigli quando servono.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--tinted">
+    <div class="container faq-wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Domande frequenti</p>
+        <h2>Le cose che ci chiedono tutti</h2>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary>Quanto tempo ci vuole per avere il sito online?<span class="faq__icon">+</span></summary>
+          <div class="faq__body">
+            Per un sito vetrina, 7 giorni lavorativi dal momento in cui abbiamo
+            materiali e conferma. I pacchetti più completi richiedono 2-3 settimane.
+          </div>
+        </details>
+        <details>
+          <summary>Devo essere esperto di tecnologia?<span class="faq__icon">+</span></summary>
+          <div class="faq__body">
+            No, zero. Ci occupiamo noi di tutto: dominio, hosting, contenuti,
+            messa online. Tu ci racconti la tua attività, al resto pensiamo noi.
+          </div>
+        </details>
+        <details>
+          <summary>Il menu digitale posso aggiornarlo da solo?<span class="faq__icon">+</span></summary>
+          <div class="faq__body">
+            Sì: cambi prezzi e piatti in autonomia, oppure ce lo chiedi e lo
+            facciamo noi: negli abbonamenti con assistenza è già incluso.
+          </div>
+        </details>
+        <details>
+          <summary>Ho già un sito, potete rifarlo?<span class="faq__icon">+</span></summary>
+          <div class="faq__body">
+            Certo, è il nostro pane quotidiano. Recuperiamo ciò che vale (testi,
+            foto, dominio) e ricostruiamo il resto da zero, moderno e mobile-first.
+          </div>
+        </details>
+        <details>
+          <summary>Cosa succede dopo il primo anno?<span class="faq__icon">+</span></summary>
+          <div class="faq__body">
+            Dominio e hosting si rinnovano a costi trasparenti (poche decine di
+            euro l'anno). Nessun vincolo: il sito è tuo, sempre.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-digital">
+    <div class="container reveal">
+      <h2>Quanto costa il sito della tua attività?</h2>
+      <p>
+        Scrivici o chiamaci: in 48 ore hai un preventivo gratuito e senza
+        impegno. Se non fa per te, nessun problema.
+      </p>
+      <a href="/contatti/" class="btn btn--primary">Preventivo gratuito in 48h</a>
+    </div>
+  </section>
+</Base>
+
+<script>
+  const ba = document.getElementById('ba');
+  const range = ba?.querySelector<HTMLInputElement>('.ba__range');
+  range?.addEventListener('input', () => {
+    ba?.style.setProperty('--pos', `${range.value}%`);
+  });
+</script>
+
+<style>
+  /* --- Slider Prima/Dopo ------------------------------------------------ */
+  .ba {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    max-width: 52rem;
+    margin-inline: auto;
+    box-shadow: var(--shadow-lg);
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  @media (max-width: 640px) {
+    .ba { aspect-ratio: 4 / 5; }
+  }
+  .ba__pane { position: absolute; inset: 0; }
+  .ba__prima { clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+  .ba__divider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--pos);
+    width: 3px;
+    background: var(--bianco);
+    transform: translateX(-50%);
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.35);
+    pointer-events: none;
+  }
+  .ba__knob {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2.7rem;
+    height: 2.7rem;
+    border-radius: 50%;
+    background: var(--bianco);
+    color: var(--rosso);
+    display: grid;
+    place-items: center;
+    font-size: 1.15rem;
+    font-weight: 800;
+    box-shadow: var(--shadow-md);
+  }
+  .ba__range {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: ew-resize;
+    margin: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    touch-action: none;
+  }
+  .ba__tag {
+    position: absolute;
+    top: 0.9rem;
+    font-size: var(--fs-200);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    pointer-events: none;
+  }
+  .ba__tag--prima { left: 0.9rem; background: rgba(0, 0, 0, 0.55); color: #fff; }
+  .ba__tag--dopo { right: 0.9rem; background: var(--rosso); color: #fff; }
+
+  /* Mockup "prima": il sito datato */
+  .mock { position: absolute; inset: 0; display: flex; flex-direction: column; }
+  .mock__bar {
+    background: #d5d1c8;
+    color: #555;
+    font-size: 0.72rem;
+    padding: 0.45rem 0.9rem;
+    font-family: 'Courier New', monospace;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .mock--old { background: #efe9da; }
+  .mock__body-old {
+    flex: 1;
+    padding: clamp(0.8rem, 3vw, 1.8rem);
+    font-family: 'Times New Roman', Times, serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.5rem, 2vw, 1rem);
+    align-items: center;
+    text-align: center;
+  }
+  .mock__title-old {
+    font-size: clamp(0.95rem, 2.6vw, 1.5rem);
+    font-weight: bold;
+    color: #7b0000;
+  }
+  .mock__img-old {
+    width: min(60%, 16rem);
+    aspect-ratio: 4 / 2.1;
+    border: 2px dashed #999;
+    background: #e2dccb;
+    display: grid;
+    place-items: center;
+    color: #888;
+    font-size: clamp(0.6rem, 1.8vw, 0.8rem);
+  }
+  .mock__text-old { width: 80%; display: flex; flex-direction: column; gap: 0.45rem; }
+  .mock__text-old span { height: 6px; background: #cfc8b4; }
+  .mock__text-old span:last-child { width: 62%; margin-inline: auto; }
+  .mock__link-old {
+    color: #0000cc;
+    text-decoration: underline;
+    font-size: clamp(0.7rem, 2vw, 0.95rem);
+  }
+  .mock__counter {
+    font-size: clamp(0.58rem, 1.6vw, 0.72rem);
+    color: #777;
+    font-family: 'Courier New', monospace;
+  }
+
+  /* Mockup "dopo": il sito moderno */
+  .mock--new { background: var(--nero); }
+  .mock__bar--new { background: #101014; color: #9a9da6; }
+  .mock__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--rosso); }
+  .mock__body-new {
+    flex: 1;
+    padding: clamp(0.9rem, 3vw, 2rem);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.6rem, 2.2vw, 1.1rem);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background:
+      radial-gradient(ellipse 60% 50% at 85% 0%, rgba(200, 32, 47, 0.25), transparent);
+  }
+  .mock__logo { color: #fff; font-weight: 800; font-size: clamp(0.8rem, 2.2vw, 1rem); }
+  .mock__h1 {
+    color: #fff;
+    font-weight: 800;
+    font-size: clamp(1.05rem, 3.4vw, 1.9rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+  .mock__cta {
+    background: var(--rosso);
+    color: #fff;
+    font-weight: 700;
+    font-size: clamp(0.65rem, 1.9vw, 0.85rem);
+    padding: 0.5em 1.3em;
+    border-radius: 999px;
+  }
+  .mock__cards { display: flex; gap: 0.6rem; width: 100%; margin-top: auto; }
+  .mock__cards span {
+    flex: 1;
+    height: clamp(2rem, 7vw, 3.4rem);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  /* --- FAQ ---------------------------------------------------------------- */
+  .faq-wrap { max-width: 46rem; }
+  .faq { display: flex; flex-direction: column; gap: 0.8rem; }
+  .faq details {
+    background: var(--bianco);
+    border: 1px solid var(--grigio-100);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: border-color var(--transition);
+  }
+  .faq details[open] { border-color: var(--rosso); }
+  .faq summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.1rem 1.4rem;
+    font-weight: 700;
+    color: var(--nero);
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq__icon {
+    flex-shrink: 0;
+    width: 1.7rem;
+    height: 1.7rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--rosso-tenue);
+    color: var(--rosso);
+    font-weight: 800;
+    transition: transform var(--transition), background var(--transition), color var(--transition);
+  }
+  .faq details[open] .faq__icon {
+    transform: rotate(45deg);
+    background: var(--rosso);
+    color: var(--bianco);
+  }
+  .faq__body {
+    padding: 0 1.4rem 1.2rem;
+    color: var(--grigio-700);
+    font-size: var(--fs-300);
+    animation: faq-open 0.3s ease;
+  }
+  @keyframes faq-open {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  .digital-hero {
+    background:
+      radial-gradient(ellipse 70% 60% at 15% 0%, rgba(200, 32, 47, 0.28), transparent),
+      var(--nero);
+    color: var(--grigio-300);
+    padding-block: clamp(4rem, 10vw, 8rem);
+  }
+  .digital-hero h1 { color: var(--bianco); }
+  .glow { color: var(--rosso); text-shadow: 0 0 40px rgba(200, 32, 47, 0.45); }
+  .digital-hero__sub {
+    margin-top: 1.5rem;
+    max-width: 38rem;
+    font-size: var(--fs-500);
+  }
+  .digital-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-top: 2.2rem;
+  }
+  .digital-hero .btn--ghost { border-color: var(--grigio-700); color: var(--bianco); }
+  .digital-hero .btn--ghost:hover { border-color: var(--bianco); }
+
+  .servizio { display: flex; gap: 1.1rem; align-items: flex-start; }
+  .servizio__icona {
+    font-size: 1.8rem;
+    line-height: 1;
+    display: grid;
+    place-items: center;
+    width: 3.2rem;
+    height: 3.2rem;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: var(--rosso-tenue);
+  }
+  .servizio h3 { margin-bottom: 0.35rem; }
+  .servizio p { color: var(--grigio-700); font-size: var(--fs-300); }
+
+  .pacchetti { align-items: stretch; }
+  .pacchetto {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    position: relative;
+  }
+  .pacchetto--featured {
+    border: 2px solid var(--rosso);
+    box-shadow: var(--shadow-lg);
+  }
+  .pacchetto__tag {
+    position: absolute;
+    top: -0.85rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--rosso);
+    color: var(--bianco);
+    font-size: var(--fs-200);
+    font-weight: 700;
+    padding: 0.25rem 0.9rem;
+    border-radius: 999px;
+    letter-spacing: 0.05em;
+  }
+  .pacchetto h3 { font-size: var(--fs-600); }
+  .pacchetto__per { color: var(--grigio-500); font-size: var(--fs-300); }
+  .pacchetto__prezzo {
+    font-size: var(--fs-700);
+    font-weight: 800;
+    color: var(--nero);
+    letter-spacing: -0.02em;
+    margin-block: 0.5rem;
+  }
+  .pacchetto__prezzo small {
+    font-size: var(--fs-300);
+    font-weight: 600;
+    color: var(--grigio-500);
+  }
+  .pacchetto ul {
+    list-style: none;
+    flex-grow: 1;
+    margin-bottom: 1.4rem;
+  }
+  .pacchetto li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.55rem;
+    font-size: var(--fs-300);
+    color: var(--grigio-700);
+  }
+  .pacchetto li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--rosso);
+    font-weight: 800;
+  }
+
+  .steps {
+    list-style: none;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+    counter-reset: step;
+  }
+  .steps li {
+    border-top: 2px solid var(--grigio-900);
+    padding-top: 1.1rem;
+  }
+  .steps strong {
+    color: var(--rosso);
+    font-size: var(--fs-500);
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+  .steps p { font-size: var(--fs-300); color: var(--grigio-300); }
+
+  .cta-digital { text-align: center; }
+  .cta-digital .container { max-width: 42rem; }
+  .cta-digital p { margin-block: 1rem 2rem; color: var(--grigio-700); font-size: var(--fs-500); }
+</style>
