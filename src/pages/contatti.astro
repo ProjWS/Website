@@ -22,12 +22,18 @@ import Base from '../layouts/Base.astro';
       <!-- FORM -->
       <form
         class="card contatti-form reveal"
-        action="https://formsubmit.co/info@mensanaformazione.com"
+        action="/api/contatto"
         method="POST"
       >
-        <input type="hidden" name="_subject" value="Nuova richiesta dal sito" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+        <p class="form-esito form-esito--ok" id="form-ok" hidden>
+          Richiesta inviata, grazie! Ti rispondiamo entro un giorno lavorativo.
+        </p>
+        <p class="form-esito form-esito--errore" id="form-errore" hidden>
+          Ops, qualcosa non ha funzionato. Riprova tra poco oppure scrivici
+          direttamente a
+          <a href="mailto:info@mensanaformazione.com">info@mensanaformazione.com</a>.
+        </p>
+        <input type="text" name="azienda" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
         <label>
           Nome e cognome
@@ -56,11 +62,15 @@ import Base from '../layouts/Base.astro';
           Messaggio
           <textarea name="messaggio" rows="5" required placeholder="Raccontaci in due righe di cosa hai bisogno…"></textarea>
         </label>
+        <label class="privacy-check">
+          <input type="checkbox" name="privacy" value="si" required />
+          <span>
+            Ho letto l'<a href="/privacy/">Informativa Privacy</a> e acconsento
+            al trattamento dei miei dati per ricevere una risposta alla mia
+            richiesta (art. 13 GDPR).
+          </span>
+        </label>
         <button type="submit" class="btn btn--primary">Invia la richiesta</button>
-        <p class="privacy-note">
-          Inviando il modulo acconsenti al trattamento dei dati per rispondere
-          alla tua richiesta (art. 13 GDPR).
-        </p>
       </form>
 
       <!-- INFO -->
@@ -101,6 +111,21 @@ import Base from '../layouts/Base.astro';
     </div>
   </section>
 </Base>
+
+<script>
+  // Mostra l'esito dell'invio del form (la funzione /api/contatto
+  // reindirizza qui con ?inviato=1 oppure ?errore=1)
+  const params = new URLSearchParams(window.location.search);
+  if (params.has('inviato')) {
+    document.getElementById('form-ok')?.removeAttribute('hidden');
+  } else if (params.has('errore')) {
+    document.getElementById('form-errore')?.removeAttribute('hidden');
+  }
+  if (params.has('inviato') || params.has('errore')) {
+    document.querySelector('.contatti-form')?.scrollIntoView({ block: 'center' });
+    history.replaceState(null, '', window.location.pathname);
+  }
+</script>
 
 <style>
   .page-hero {
@@ -158,7 +183,44 @@ import Base from '../layouts/Base.astro';
   }
   .contatti-form textarea { resize: vertical; }
   .contatti-form .btn { align-self: flex-start; margin-top: 0.4rem; }
-  .privacy-note { font-size: var(--fs-200); color: var(--grigio-500); }
+
+  .hp-field {
+    position: absolute !important;
+    left: -9999px !important;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+  .privacy-check {
+    flex-direction: row !important;
+    align-items: flex-start;
+    gap: 0.6rem !important;
+    font-weight: 400 !important;
+    font-size: var(--fs-200) !important;
+    color: var(--grigio-700);
+  }
+  .privacy-check input {
+    width: auto !important;
+    margin-top: 0.2rem;
+    accent-color: var(--rosso);
+  }
+  .privacy-check a { font-weight: 600; }
+  .form-esito {
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: var(--fs-300);
+  }
+  .form-esito--ok {
+    background: #e8f6ec;
+    color: #1a7a3a;
+    border: 1.5px solid #bfe5cb;
+  }
+  .form-esito--errore {
+    background: #fdecec;
+    color: #a81c28;
+    border: 1.5px solid #f3c1c5;
+  }
 
   .contatti-info { display: flex; flex-direction: column; gap: 1.75rem; }
   .info-block h3 {
