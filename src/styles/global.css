@@ -364,3 +364,16 @@ h3 { font-size: var(--fs-600); }
   color: var(--rosso);
   letter-spacing: 0.04em;
 }
+
+/* Icone SVG inline (stile Lucide): mai emoji, tratto rosso brand */
+.ico {
+  width: 1.1em;
+  height: 1.1em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: -0.16em;
+  flex-shrink: 0;
+}

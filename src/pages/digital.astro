@@ -1,27 +1,39 @@
 ---
 import Base from '../layouts/Base.astro';
 
+// Icone SVG inline (stile Lucide): niente emoji, regola di progetto
+const icone = {
+  globe:
+    '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>',
+  qr:
+    '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect width="5" height="5" x="3" y="3" rx="1"/><rect width="5" height="5" x="16" y="3" rx="1"/><rect width="5" height="5" x="3" y="16" rx="1"/><path d="M21 16h-3a2 2 0 0 0-2 2v3"/><path d="M21 21v.01M12 7v3a2 2 0 0 1-2 2H7"/><path d="M3 12h.01M12 3h.01M12 16v.01M16 12h1M21 12v.01M12 21v-1"/></svg>',
+  pin:
+    '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>',
+  palette:
+    '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22a10 10 0 1 1 10-10c0 4.42-2.5 5-5 5h-1.5a2.5 2.5 0 0 0-2 4c.34.45.5.94.5 1a1 1 0 0 1-2 0Z"/><circle cx="13.5" cy="6.5" r=".8"/><circle cx="17.5" cy="10.5" r=".8"/><circle cx="8.5" cy="7.5" r=".8"/><circle cx="6.5" cy="12" r=".8"/></svg>',
+};
+
 const servizi = [
   {
-    icona: '🌐',
+    icona: 'globe',
     titolo: 'Siti web vetrina',
     testo:
       'Un sito moderno, veloce e mobile-first per la tua attività: chi sei, cosa fai, dove trovarti. Online in pochi giorni, non mesi.',
   },
   {
-    icona: '📱',
+    icona: 'qr',
     titolo: 'Menu digitali con QR',
     testo:
       'Menu consultabile dal telefono con un QR code brandizzato sul tavolo. Aggiornabile in tempo reale: cambi un prezzo, è già online.',
   },
   {
-    icona: '📍',
+    icona: 'pin',
     titolo: 'Presenza online',
     testo:
       'Profilo Google ottimizzato, mappe, orari, recensioni e social collegati. Farti trovare da chi ti cerca in zona.',
   },
   {
-    icona: '🎨',
+    icona: 'palette',
     titolo: 'Grafica & materiali',
     testo:
       'Loghi, biglietti da visita, locandine e materiali coordinati con il tuo sito. Un\'immagine sola, riconoscibile ovunque.',
@@ -109,7 +121,7 @@ const pacchetti = [
       <div class="grid grid--2">
         {servizi.map((s, i) => (
           <div class="card servizio reveal spot" style={`--d: ${i * 0.08}s`}>
-            <span class="servizio__icona" aria-hidden="true">{s.icona}</span>
+            <span class="servizio__icona" aria-hidden="true" set:html={icone[s.icona]} />
             <div>
               <h3>{s.titolo}</h3>
               <p>{s.testo}</p>
@@ -134,7 +146,7 @@ const pacchetti = [
           <div class="mock mock--new">
             <div class="mock__bar mock__bar--new"><span class="mock__dot"></span>latuapizzeria.it</div>
             <div class="mock__body-new">
-              <div class="mock__logo">🍕 Da Gigi</div>
+              <div class="mock__logo"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 11h.01M11 15h.01M16 16h.01M2 16l20 6-6-20A20 20 0 0 0 2 16"/><path d="M5.71 17.11a17.04 17.04 0 0 1 11.4-11.4"/></svg> Da Gigi</div>
               <div class="mock__h1">La vera pizza<br />napoletana a Cagliari</div>
               <div class="mock__cta">Guarda il menu</div>
               <div class="mock__cards">
@@ -542,8 +554,6 @@ const pacchetti = [
 
   .servizio { display: flex; gap: 1.1rem; align-items: flex-start; }
   .servizio__icona {
-    font-size: 1.8rem;
-    line-height: 1;
     display: grid;
     place-items: center;
     width: 3.2rem;
@@ -551,7 +561,9 @@ const pacchetti = [
     flex-shrink: 0;
     border-radius: 12px;
     background: var(--rosso-tenue);
+    color: var(--rosso);
   }
+  .servizio__icona :global(.ico) { width: 1.6rem; height: 1.6rem; }
   .servizio h3 { margin-bottom: 0.35rem; }
   .servizio p { color: var(--grigio-700); font-size: var(--fs-300); }
 
