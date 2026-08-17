@@ -1,0 +1,59 @@
+---
+import Base from '../layouts/Base.astro';
+
+// Pagina 404. ⛔ Perché esiste: fino al 17/08/2026 il sito non ne aveva una, e
+// qualsiasi indirizzo inesistente restituiva la home con stato 200 (verificato
+// sul live confrontando i byte: /digital/ e una rotta inventata servivano la
+// home identica). Per chi naviga non si vedeva, per Google era un "soft 404" e
+// gli indirizzi rimossi non risultavano mai tali.
+// Conta soprattutto adesso: la pagina /digital/ è stata tolta il 17/08 e il
+// dominio mensanaformazione.com sta per essere spostato qui dal sito vecchio,
+// che ha una struttura di indirizzi diversa.
+// Astro la compila in 404.html, che Cloudflare Pages serve da solo con lo
+// stato 404 corretto: non serve nessuna configurazione.
+---
+
+<Base
+  title="Pagina non trovata | Mens Sana Formazione"
+  description="La pagina cercata non esiste o è stata spostata. Da qui si torna alla home, al catalogo dei corsi o ai contatti."
+>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Errore 404</p>
+      <h1>Questa pagina non esiste</h1>
+      <p class="page-hero__sub">
+        L'indirizzo è sbagliato, oppure la pagina è stata spostata. Nessun
+        problema: qui sotto ci sono le tre strade più utili.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="nf-actions">
+        <a class="btn btn--primary" href="/">Torna alla home</a>
+        <a class="btn btn--ghost" href="/formazione/">Vedi i corsi</a>
+        <a class="btn btn--ghost" href="/contatti/">Contattaci</a>
+      </div>
+      <p class="nf-note">
+        Se sei arrivato qui da un link salvato o da un motore di ricerca,
+        scrivici a
+        <a href="mailto:info@mensanaformazione.com">info@mensanaformazione.com</a>
+        e sistemiamo il collegamento.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .nf-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+  .nf-note {
+    color: var(--dark);
+    max-width: 46rem;
+  }
+</style>
