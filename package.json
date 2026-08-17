@@ -1,7 +1,7 @@
 {
   "name": "mensana-website",
   "version": "1.0.0",
-  "description": "Sito web Mens Sana Formazione — formazione Legal & Compliance + Mens Sana Digital",
+  "description": "Sito web Mens Sana Formazione — formazione e consulenza Legal & Compliance (versione senza ramo digitale)",
   "type": "module",
   "scripts": {
     "dev": "astro dev",

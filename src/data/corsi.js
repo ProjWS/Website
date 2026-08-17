@@ -1054,3 +1054,11 @@ export const consulenze = [
 ];
 
 export const LINKEDIN_URL = 'https://www.linkedin.com/company/mens-sana-formazione-srl/';
+
+// Profilo Instagram ripreso dal footer del vecchio sito mensanaformazione.com
+// (verificato il 06/08/2026: è quello linkato dal sito ancora online).
+// ⛔ Se la costante è vuota, l'icona NON compare da nessuna parte nel sito:
+// nessun link rotto.
+// ⛔ Facebook: il vecchio sito linka anche facebook.com/mensanaformazione,
+// ma Nicola ha deciso il 06/08 di NON metterlo. Non riproporlo.
+export const INSTAGRAM_URL = 'https://www.instagram.com/mensanaformazione/';

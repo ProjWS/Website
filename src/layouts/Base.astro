@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { LINKEDIN_URL } from '../data/corsi.js';
+import { LINKEDIN_URL, INSTAGRAM_URL } from '../data/corsi.js';
 
 interface Props {
   title: string;
@@ -10,7 +10,6 @@ const { title, description } = Astro.props;
 const nav = [
   { href: '/', label: 'Home' },
   { href: '/formazione/', label: 'Formazione & Consulenza' },
-  { href: '/digital/', label: 'Mens Sana Digital' },
   { href: '/contatti/', label: 'Contatti' },
 ];
 const current = Astro.url.pathname;
@@ -46,15 +45,28 @@ const current = Astro.url.pathname;
               {item.label}
             </a>
           ))}
-          <a
-            href={LINKEDIN_URL}
-            target="_blank"
-            rel="noopener"
-            class="site-nav__linkedin"
-            aria-label="Seguici su LinkedIn"
-          >
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
-          </a>
+          <div class="site-nav__social">
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noopener"
+              class="site-nav__linkedin"
+              aria-label="Seguici su LinkedIn"
+            >
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            </a>
+            {INSTAGRAM_URL && (
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener"
+                class="site-nav__instagram"
+                aria-label="Seguici su Instagram"
+              >
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg>
+              </a>
+            )}
+          </div>
           <a href="/contatti/" class="btn btn--primary site-nav__cta">Parliamone</a>
         </nav>
         <button
@@ -79,8 +91,8 @@ const current = Astro.url.pathname;
           <img src="/logo.png" alt="Mens Sana Formazione" width="180" class="site-footer__logo" />
           <p>
             Formazione e consulenza Legal &amp; Compliance per enti, imprese e
-            professionisti. E con <strong>Mens Sana Digital</strong>, servizi
-            digitali su misura per le piccole attività.
+            professionisti. Corsi in videolezione e percorsi su misura, dal 2017
+            a Milano.
           </p>
         </div>
         <div>
@@ -92,10 +104,23 @@ const current = Astro.url.pathname;
             <li><a href="mailto:info@mensanaformazione.com">info@mensanaformazione.com</a></li>
             <li>PEC: info@pec.mensanaformazione.com</li>
           </ul>
-          <a href={LINKEDIN_URL} target="_blank" rel="noopener" class="site-footer__linkedin">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
-            Seguici su LinkedIn
-          </a>
+          <div class="site-footer__social">
+            <a href={LINKEDIN_URL} target="_blank" rel="noopener" class="site-footer__linkedin">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+              Seguici su LinkedIn
+            </a>
+            {INSTAGRAM_URL && (
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener"
+                class="site-footer__tondo"
+                aria-label="Seguici su Instagram"
+              >
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="18" height="18" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg>
+              </a>
+            )}
+          </div>
         </div>
         <div>
           <h3>Orari</h3>
@@ -106,14 +131,14 @@ const current = Astro.url.pathname;
           <h3>Esplora</h3>
           <ul>
             <li><a href="/formazione/">Formazione &amp; Consulenza</a></li>
-            <li><a href="/digital/">Mens Sana Digital</a></li>
             <li><a href="/contatti/">Contatti</a></li>
             <li><a href="/privacy/">Informativa Privacy e Cookie</a></li>
+            <li><a href="/termini/">Condizioni generali di contratto</a></li>
           </ul>
         </div>
       </div>
       <div class="container site-footer__legal">
-        <p>© {new Date().getFullYear()} Mens Sana Formazione S.r.l. · P.IVA 10160940960 · Milano · <a href="/privacy/">Privacy &amp; Cookie</a></p>
+        <p>© {new Date().getFullYear()} Mens Sana Formazione S.r.l. · Via San Francesco d'Assisi 13, 20122 Milano · C.F. e P.IVA 10160940960 · Iscritta al Registro delle Imprese di Milano · <a href="/privacy/">Privacy &amp; Cookie</a> · <a href="/termini/">Condizioni generali</a></p>
       </div>
     </footer>
 
@@ -258,6 +283,30 @@ const current = Astro.url.pathname;
         transform: translateY(-2px);
       }
 
+      .site-nav__instagram {
+        display: grid;
+        place-items: center;
+        width: 2.3rem;
+        height: 2.3rem;
+        border-radius: 50%;
+        color: var(--grigio-700);
+        background: var(--grigio-100);
+        margin-left: -0.9rem;
+        transition: background var(--transition), color var(--transition), transform var(--transition);
+      }
+      .site-nav__instagram:hover {
+        background: linear-gradient(45deg, #f09433, #dc2743 45%, #bc1888);
+        color: var(--bianco);
+        transform: translateY(-2px);
+      }
+
+      /* Su desktop il contenitore è trasparente: le icone restano figlie di
+         .site-nav e la barra resta identica a prima. Su mobile (sotto)
+         diventa una riga sola, invece di barre grigie impilate. */
+      .site-nav__social {
+        display: contents;
+      }
+
       .nav-toggle {
         display: none;
         flex-direction: column;
@@ -298,13 +347,16 @@ const current = Astro.url.pathname;
         .site-nav__link { padding-block: 0.9rem; font-size: var(--fs-400); }
         .site-nav__link::after { display: none; }
         .site-nav__cta { margin-top: 0.75rem; }
-        .site-nav__linkedin {
-          width: auto;
-          height: auto;
-          border-radius: 999px;
-          padding: 0.7rem 1rem;
-          justify-self: start;
-          margin-top: 0.5rem;
+        .site-nav__social {
+          display: flex;
+          gap: 0.6rem;
+          margin-top: 0.9rem;
+        }
+        .site-nav__linkedin,
+        .site-nav__instagram {
+          width: 2.6rem;
+          height: 2.6rem;
+          margin-left: 0;
         }
       }
 
@@ -338,11 +390,31 @@ const current = Astro.url.pathname;
       .site-footer li { margin-bottom: 0.45rem; }
       .site-footer a { color: var(--grigio-300); transition: color var(--transition); }
       .site-footer a:hover { color: var(--bianco); }
+      .site-footer__social {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.6rem;
+        margin-top: 1rem;
+      }
+      .site-footer__tondo {
+        display: grid;
+        place-items: center;
+        width: 2.4rem;
+        height: 2.4rem;
+        border-radius: 50%;
+        color: var(--bianco) !important;
+        background: linear-gradient(45deg, #f09433, #dc2743 45%, #bc1888);
+        transition: transform var(--transition), box-shadow var(--transition);
+      }
+      .site-footer__tondo:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(220, 39, 67, 0.45);
+      }
       .site-footer__linkedin {
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
-        margin-top: 1rem;
         font-weight: 700;
         color: var(--bianco) !important;
         background: #0a66c2;

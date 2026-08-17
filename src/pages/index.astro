@@ -6,8 +6,8 @@ const nCorsi = aree.reduce((n, a) => n + a.corsi.length, 0);
 ---
 
 <Base
-  title="Mens Sana Formazione | Formazione Legal & Compliance e Servizi Digitali | Milano"
-  description="Formazione e consulenza Legal & Compliance per enti e imprese, e servizi digitali su misura per le piccole attività. Competenza, concretezza, velocità, risultato."
+  title="Mens Sana Formazione | Corsi e consulenza Legal & Compliance | Milano"
+  description="Corsi e consulenza Legal & Compliance per enti, imprese e professionisti: diritto societario, compliance, contratti, credito, fisco. Milano, dal 2017."
 >
   <!-- HERO -->
   <section class="hero">
@@ -18,23 +18,23 @@ const nCorsi = aree.reduce((n, a) => n + a.corsi.length, 0);
       <h1 class="rise" style="--r: 1">
         La competenza legale che forma.<br />
         <span class="text-rosso"
-          >Il digitale che fa <span class="flip-word" id="flip-word">crescere</span>.</span
+          >Il sapere che fa <span class="flip-word" id="flip-word">decidere</span>.</span
         >
       </h1>
       <p class="hero__sub rise" style="--r: 2">
         Mens Sana Formazione affianca enti, imprese e professionisti con corsi e
-        consulenza <strong>Legal &amp; Compliance</strong>. E oggi porta la stessa
-        concretezza alle piccole attività con <strong>Mens Sana Digital</strong>:
-        siti web, menu digitali e presenza online.
+        consulenza <strong>Legal &amp; Compliance</strong>: diritto societario,
+        organismi di controllo, contrattualistica, credit management, finance e
+        fiscale. Videolezioni con studio guidato ed edizioni aziendali su misura.
       </p>
       <div class="hero__actions rise" style="--r: 3">
-        <a href="/formazione/" class="btn btn--primary">Scopri i corsi</a>
-        <a href="/digital/" class="btn btn--ghost">Servizi digitali per PMI</a>
+        <a href="/formazione/#catalogo" class="btn btn--primary">Scopri i corsi</a>
+        <a href="/formazione/#consulenza" class="btn btn--ghost">Consulenza per le imprese</a>
       </div>
       <ul class="hero__stats rise" style="--r: 4">
         <li><strong data-count={nCorsi}>0</strong><span>corsi a catalogo</span></li>
         <li><strong data-count="8">0</strong><span>aree tematiche</span></li>
-        <li><strong data-count="2">0</strong><span>anime, un metodo</span></li>
+        <li><strong data-count="9">0</strong><span>anni al fianco delle imprese</span></li>
       </ul>
     </div>
   </section>
@@ -52,44 +52,45 @@ const nCorsi = aree.reduce((n, a) => n + a.corsi.length, 0);
           <span class="marquee__item">Credit Management</span>
           <span class="marquee__item">Finance &amp; Fiscale</span>
           <span class="marquee__item">GDPR &amp; Privacy</span>
-          <span class="marquee__item">Siti Web</span>
-          <span class="marquee__item">Menu Digitali</span>
+          <span class="marquee__item">Appalti Pubblici</span>
+          <span class="marquee__item">Transfer Pricing</span>
         </>
       ))}
     </div>
   </div>
 
-  <!-- I DUE RAMI -->
+  <!-- I DUE MODI DI LAVORARE INSIEME -->
   <section class="section">
     <div class="container">
       <div class="section-head reveal">
         <p class="eyebrow">Cosa facciamo</p>
-        <h2>Due anime, la stessa concretezza</h2>
+        <h2>Due modi di lavorare insieme</h2>
         <p>
-          Scegli il percorso che ti riguarda: la formazione legale d'impresa o
-          il salto digitale della tua attività.
+          Scegli il percorso che ti riguarda: formarti su una materia con un
+          corso strutturato, oppure farti affiancare direttamente
+          sull'operatività.
         </p>
       </div>
       <div class="grid grid--2">
-        <a href="/formazione/" class="ramo card reveal spot">
-          <span class="badge">Il cuore storico</span>
-          <h3>Formazione &amp; Consulenza Legal / Compliance</h3>
+        <a href="/formazione/#catalogo" class="ramo card reveal spot">
+          <span class="badge">Formazione</span>
+          <h3>Corsi a catalogo ed edizioni aziendali</h3>
           <p>
-            Corsi in videolezione su diritto societario, compliance,
-            contrattualistica, credit management e fisco. Consulenza su GDPR,
-            contratti e transfer pricing.
+            Corsi in videolezione su diritto societario, organismi di controllo,
+            contrattualistica, credit management e fisco. Programmi modulabili
+            ed edizioni dedicate al tuo team.
           </p>
           <span class="ramo__cta">Esplora il catalogo →</span>
         </a>
-        <a href="/digital/" class="ramo ramo--digital card reveal spot spot--dark" style="--d: .12s">
-          <span class="badge badge--invert">Novità</span>
-          <h3>Mens Sana Digital: servizi per piccole attività</h3>
+        <a href="/formazione/#consulenza" class="ramo card reveal spot" style="--d: .12s">
+          <span class="badge">Consulenza</span>
+          <h3>Affiancamento su GDPR, contratti e transfer pricing</h3>
           <p>
-            Siti web vetrina, menu digitali con QR code, presenza online e
-            grafica per bar, ristoranti, negozi e piccole imprese. Semplice,
-            veloce, senza pensieri.
+            Quando non serve un corso ma una mano esperta subito: adeguamento
+            privacy con DPO esterno, contrattualistica nazionale e
+            internazionale, documentazione di transfer price.
           </p>
-          <span class="ramo__cta">Scopri i pacchetti →</span>
+          <span class="ramo__cta">Scopri la consulenza →</span>
         </a>
       </div>
     </div>
@@ -119,8 +120,8 @@ const nCorsi = aree.reduce((n, a) => n + a.corsi.length, 0);
           <span class="metodo__num">02</span>
           <h3>During · Esecuzione</h3>
           <p>
-            Formazione erogata da professionisti del settore, progetti digitali
-            consegnati in tempi rapidi e con standard alti.
+            Formazione erogata da professionisti che la materia la praticano
+            ogni giorno, con materiali aggiornati alla normativa vigente.
           </p>
         </div>
         <div class="metodo reveal" style="--d: .24s">
@@ -153,8 +154,8 @@ const nCorsi = aree.reduce((n, a) => n + a.corsi.length, 0);
         <div class="card reveal spot" style="--d: .12s">
           <h3>Su misura, sempre</h3>
           <p>
-            Ogni corso e ogni progetto digitale parte dalle tue esigenze
-            specifiche. Il catalogo è la base, la personalizzazione è la regola.
+            Ogni corso parte dalle tue esigenze specifiche: durata, taglio e
+            casi pratici. Il catalogo è la base, la personalizzazione è la regola.
           </p>
         </div>
       </div>
@@ -190,8 +191,8 @@ const nCorsi = aree.reduce((n, a) => n + a.corsi.length, 0);
     <div class="container reveal">
       <h2>Parliamo del tuo progetto</h2>
       <p>
-        Un corso per il tuo team, una consulenza compliance o il sito della tua
-        attività: raccontaci di cosa hai bisogno, ti rispondiamo in fretta.
+        Un corso per il tuo team o una consulenza su un tema specifico:
+        raccontaci di cosa hai bisogno, ti rispondiamo in fretta.
       </p>
       <a href="/contatti/" class="btn btn--primary">Contattaci ora</a>
     </div>
@@ -199,7 +200,7 @@ const nCorsi = aree.reduce((n, a) => n + a.corsi.length, 0);
 </Base>
 
 <script>
-  const words = ['crescere', 'vendere', 'spiccare', 'ripartire'];
+  const words = ['decidere', 'prevenire', 'controllare', 'crescere'];
   const el = document.getElementById('flip-word');
   if (el && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     let i = 0;
@@ -287,14 +288,6 @@ const nCorsi = aree.reduce((n, a) => n + a.corsi.length, 0);
   .ramo h3 { font-size: var(--fs-600); }
   .ramo p { color: var(--grigio-700); flex-grow: 1; }
   .ramo__cta { font-weight: 700; color: var(--rosso); }
-  .ramo--digital {
-    background: var(--nero);
-    border-color: var(--nero);
-  }
-  .ramo--digital h3 { color: var(--bianco); }
-  .ramo--digital p { color: var(--grigio-300); }
-  .ramo--digital .ramo__cta { color: #ff8a94; }
-  .badge--invert { background: rgba(200, 32, 47, 0.25); color: #ff8a94; }
 
   .metodo {
     border-top: 2px solid var(--grigio-900);

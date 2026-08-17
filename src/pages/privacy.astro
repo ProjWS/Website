@@ -1,5 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
+
+// Informativa ripresa dal documento pubblicato sul vecchio sito
+// ("Informativa Privacy e Cookie Policy", versione 2.0 del 18 gennaio 2020,
+// PDF in `DOCUMENTI da far controllare a CLAUDE/`). Testo dell'originale
+// mantenuto integralmente: gli amministratori hanno chiesto di attenersi a
+// quello. Le uniche aggiunte sono le due sezioni che l'originale non poteva
+// avere perché il sito non esisteva ancora: i dati raccolti dal modulo di
+// contatto e i fornitori di servizi (Cloudflare e Brevo).
 ---
 
 <Base
@@ -12,7 +20,7 @@ import Base from '../layouts/Base.astro';
       <h1>Informativa Privacy e Cookie Policy</h1>
       <p class="page-hero__sub">
         Informativa sul trattamento dei dati personali ex art. 13 del
-        Regolamento UE 2016/679 ("GDPR").
+        Regolamento UE 2016/679.
       </p>
     </div>
   </section>
@@ -22,15 +30,16 @@ import Base from '../layouts/Base.astro';
       <h2>Perché queste informazioni</h2>
       <p>
         Ai sensi e per l'effetto del Regolamento (UE) 2016/679 (di seguito
-        "Regolamento" o anche solo "GDPR"), questa pagina descrive le modalità
-        di trattamento dei dati personali degli utenti che consultano il sito
-        web di Mens Sana Formazione S.r.l. (www.mensanaformazione.com), di
-        seguito, per brevità espositiva, anche solo "Mens Sana".
+        "Regolamento" o anche solo "GDPR"), questa pagina web descrive le
+        modalità di trattamento dei dati personali degli utenti che consultano
+        il sito web di Mens Sana Formazione S.r.l.
+        (www.mensanaformazione.com), di seguito, per brevità espositiva, anche
+        solo "Mens Sana".
       </p>
       <p>
         I termini e le definizioni di cui alla presente informativa, quali a
         titolo esemplificativo "Interessato", "Titolare del Trattamento",
-        "Responsabile del Trattamento", "Dati personali", fanno riferimento
+        "Responsabile del Trattamento", "Dati personali", ecc. fanno riferimento
         alle definizioni di cui all'art. 4 del Regolamento.
       </p>
       <p>
@@ -42,10 +51,15 @@ import Base from '../layouts/Base.astro';
 
       <h2>Titolare del trattamento</h2>
       <p>
+        Poiché a seguito della consultazione del sito possono essere trattati
+        Dati personali, quindi dati relativi a persone fisiche (identificate o
+        identificabili), si specifica di seguito che:
+      </p>
+      <p>
         Titolare del trattamento è Mens Sana Formazione S.r.l., con sede legale
-        in Milano (MI), 20122, Via San Francesco d'Assisi n. 13.
-        Email: <a href="mailto:privacy@mensanaformazione.com">privacy@mensanaformazione.com</a>,
-        PEC: info@pec.mensanaformazione.com.
+        in Milano (MI) - 20122, alla Via San Francesco D'Assisi n. 13, PEO:
+        <a href="mailto:privacy@mensanaformazione.com">privacy@mensanaformazione.com</a>,
+        PEC: info@pec.mensanaformazione.com
       </p>
 
       <h2>Tipologie di dati trattati</h2>
@@ -58,23 +72,34 @@ import Base from '../layouts/Base.astro';
         <li>
           <strong>Dati di navigazione</strong>: i sistemi informatici preposti
           al funzionamento di questo sito acquisiscono, nel corso del loro
-          normale esercizio, alcuni dati tecnici (quali gli indirizzi IP) la
-          cui trasmissione è implicita nell'uso dei protocolli di
-          comunicazione di Internet. Tali dati sono trattati al solo fine di
-          garantire la sicurezza e la corretta erogazione del servizio.
+          normale esercizio, alcuni dati tecnici (quali gli indirizzi IP) la cui
+          trasmissione è implicita nell'uso dei protocolli di comunicazione di
+          Internet. Tali dati sono trattati al solo fine di garantire la
+          sicurezza e la corretta erogazione del servizio.
         </li>
       </ul>
 
       <h2>Finalità e base giuridica del trattamento</h2>
       <p>
-        I Dati personali indicati in questa pagina sono trattati da Mens Sana
-        ai sensi e per l'effetto di cui all'art. 6 del GDPR, in particolare per
-        le seguenti finalità:
+        I Dati personali indicati in questa pagina sono trattati da Mens Sana ai
+        sensi e per l'effetto di cui all'art. 6 del GDPR, in particolare per le
+        seguenti finalità:
       </p>
       <ul>
         <li>riscontro alle richieste inviate tramite il modulo di contatto;</li>
-        <li>attività di promozione di offerte commerciali di natura formativa e professionale;</li>
-        <li>offerta di servizi qualificati di natura consulenziale alle persone fisiche e alle imprese.</li>
+        <li>
+          attività di promozione di offerte commerciali di natura formativa e
+          professionale;
+        </li>
+        <li>
+          offerta di servizi qualificati di natura consulenziali alle persone
+          fisiche ed alle imprese;
+        </li>
+        <li>comunicazioni promozionali in genere via e-mail;</li>
+        <li>
+          compilazione di moduli e formulari e raccolta dati per invio
+          comunicazioni e newsletter.
+        </li>
       </ul>
       <p>
         La base giuridica sottesa alle finalità sopra descritte è quella di cui
@@ -84,11 +109,11 @@ import Base from '../layouts/Base.astro';
       <h2>Modalità del trattamento e fornitori di servizi</h2>
       <p>
         Il sito è ospitato sull'infrastruttura di Cloudflare, Inc., che agisce
-        quale Responsabile del Trattamento ai sensi dell'art. 28 del
-        Regolamento sulla base delle proprie condizioni di protezione dei dati.
-        I messaggi inviati tramite il modulo di contatto sono recapitati alla
-        casella di posta del Titolare mediante il servizio di invio email di
-        Brevo (Sendinblue SAS, Parigi, Francia), anch'esso Responsabile del
+        quale Responsabile del Trattamento ai sensi dell'art. 28 del Regolamento
+        sulla base delle proprie condizioni di protezione dei dati. I messaggi
+        inviati tramite il modulo di contatto sono recapitati alla casella di
+        posta del Titolare mediante il servizio di invio email di Brevo
+        (Sendinblue SAS, Parigi, Francia), anch'esso Responsabile del
         Trattamento. I dati inviati tramite il modulo non vengono memorizzati
         sul sito.
       </p>
@@ -98,10 +123,10 @@ import Base from '../layouts/Base.astro';
         Nell'ambito dell'attività svolta da Mens Sana, i Dati personali degli
         Interessati possono essere trasmessi a soggetti terzi che collaborano a
         vario titolo con Mens Sana, oltre che a persone fisiche, liberi
-        professionisti, società tra professionisti, studi associati i quali, ai
-        sensi dell'articolo 28 del Regolamento, saranno nominati Responsabili
-        del Trattamento, oppure agiranno in autonomia come distinti Titolari
-        del Trattamento.
+        professionisti, società tra professionisti, social network, studi
+        associati i quali, ai sensi dell'articolo 28 del Regolamento, saranno
+        nominati Responsabili del Trattamento, oppure agiranno in autonomia come
+        distinti Titolari del Trattamento.
       </p>
       <p>
         I Dati personali raccolti sono altresì trattati dal personale di Mens
@@ -110,79 +135,247 @@ import Base from '../layouts/Base.astro';
         medesimo.
       </p>
 
-      <h2>Criteri per l'individuazione del periodo di conservazione</h2>
-      <p>
-        Mens Sana, in conformità a quanto disposto dall'art. 5, paragrafo 1,
-        lett. e) del GDPR, conserverà i Dati personali per un arco di tempo non
-        superiore al conseguimento delle finalità per le quali gli stessi sono
-        trattati. Il Trattamento potrà avvenire tanto in forma manuale, quanto
-        in forma automatizzata, e in ogni caso con modalità volte a garantire
-        la massima sicurezza e riservatezza, ad opera di soggetti a ciò
-        appositamente incaricati. La conservazione dei Dati, che dipende dalle
-        finalità del Trattamento sopra descritte, non si protrarrà oltre i 24
-        mesi, salvo autorizzazione, casi eccezionali e/o diverse indicazioni di
-        legge.
-      </p>
-
       <h2>Diritti degli interessati</h2>
       <p>
         Gli Interessati hanno il diritto di ottenere da Mens Sana, nei casi
         previsti, l'accesso ai propri Dati personali e la rettifica o la
-        cancellazione (oblio) degli stessi o la limitazione del Trattamento o
-        la portabilità dei Dati che li riguarda o di opporsi al Trattamento.
+        cancellazione (oblio) degli stessi o la limitazione del Trattamento o la
+        portabilità dei Dati che li riguarda o di opporsi al Trattamento.
+      </p>
+      <p>
         Resta inoltre salvo il diritto di revoca dell'eventuale consenso che
         l'interessato potrà esercitare in qualunque momento.
       </p>
       <p>
         I diritti degli Interessati sono disciplinati compiutamente agli artt.
         15 e seguenti del Regolamento, da intendersi in questa sede
-        ritrascritti. Eventuali istanze volte a esercitare i predetti diritti
-        potranno essere indirizzate al Titolare del Trattamento
-        (<a href="mailto:info@mensanaformazione.com">info@mensanaformazione.com</a>)
-        oppure al riferimento privacy
-        (<a href="mailto:privacy@mensanaformazione.com">privacy@mensanaformazione.com</a>).
+        ritrascritti. Eventuali istanze volte ad esercitare i predetti diritti
+        potranno essere indirizzate al Titolare del Trattamento (PEO:
+        <a href="mailto:info@mensanaformazione.com">info@mensanaformazione.com</a>),
+        oppure al Responsabile della Protezione dei Dati (PEO:
+        <a href="mailto:privacy@mensanaformazione.com">privacy@mensanaformazione.com</a>).
+      </p>
+
+      <h2>Cookies</h2>
+      <p>
+        Mens Sana non utilizza cookie per la profilazione degli utenti che
+        visitano e/o consultano la propria pagina web, né vengono impiegati
+        altri metodi di tracciamento automatizzato.
+      </p>
+      <p>
+        Viene invece fatto uso di cookie di sessione in modo strettamente
+        limitato a quanto necessario per la navigazione sicura ed efficiente dei
+        siti.
+      </p>
+      <p>
+        La memorizzazione dei cookie di sessione nei terminali o nei browser è
+        sotto il controllo dell'utente, che può rimuovere in qualsiasi istante,
+        seguendo le istruzioni rese fruibili dallo sviluppatore del web browser
+        prescelto dallo stesso.
+      </p>
+
+      <h2>Criteri per l'individuazione del periodo di conservazione dei dati personali</h2>
+      <p>
+        Mens Sana in conformità a quanto disposto dall'art. 5, paragrafo 1, lett.
+        e) del GDPR conserverà i Dati personali per un arco di tempo non
+        superiore al conseguimento delle finalità per le quali sono gli stessi
+        sono trattati.
+      </p>
+      <p>
+        Il Trattamento potrà avvenire tanto in forma manuale, quanto in forma
+        automatizzata, ed in ogni caso con modalità volte a garantire la massima
+        sicurezza e riservatezza, ad opera di soggetti di ciò appositamente
+        incaricati.
+      </p>
+      <p>
+        La conservazione dei Dati, che dipende dalle finalità del Trattamento
+        sopra descritte, non si protrarrà oltre i 24 mesi, salvo autorizzazione,
+        casi eccezionali e/o diverse indicazioni di legge.
       </p>
 
       <h2>Trasferimento dei dati all'estero</h2>
       <p>
-        Mens Sana, nell'ambito della propria attività, potrà trasferire i Dati
-        personali degli Interessati a una Organizzazione Internazionale o a
-        Paesi appartenenti all'Unione Europea e/o a Paesi terzi extra UE al
-        fine di ottemperare alle finalità di trattamento sopra indicate. Il
-        suddetto trasferimento avverrà esclusivamente sulla base e in
-        conformità alle disposizioni di cui al Capo V, artt. 44 e seguenti del
-        GDPR, da intendersi in questa sede integralmente ritrascritti.
+        Mens Sana nell'ambito della propria attività potrà trasferire i Dati
+        personali degli Interessati ad una Organizzazione Internazionale o a
+        Paesi appartenenti all'Unione Europea e/o a Paesi terzi extra UE al fine
+        di ottemperare alle finalità di trattamento sopra indicate. Il suddetto
+        trasferimento avverrà esclusivamente sulla base ed in conformità alle
+        disposizioni di cui al Capo V, Artt. 44 e seguenti del GDPR, da
+        intendersi in questa sede integralmente ritrascritti.
       </p>
 
       <h2>Diritto di reclamo</h2>
       <p>
         Gli interessati che ritengono che il Trattamento dei Dati personali a
-        loro riferiti effettuato attraverso questo sito avvenga in violazione
-        di quanto previsto dal Regolamento hanno il diritto di proporre reclamo
-        al Garante, come previsto dall'art. 77 del Regolamento stesso, o di
-        adire le opportune sedi giudiziarie (art. 79 del Regolamento).
+        loro riferiti effettuato attraverso questo sito avvenga in violazione di
+        quanto previsto dal Regolamento hanno il diritto di proporre reclamo al
+        Garante, come previsto dall'art. 77 del Regolamento stesso, o di adire
+        le opportune sedi giudiziarie (art. 79 del Regolamento).
       </p>
 
       <h2>Cookie policy</h2>
       <p>
-        <strong>Questo sito non utilizza alcun cookie</strong>: né cookie
-        tecnici, né cookie analitici, né cookie di profilazione, né altri
-        strumenti di tracciamento. Mens Sana non effettua profilazione: non
-        svolgiamo attività di studio delle abitudini e delle scelte di consumo
-        degli utenti che navigano nel nostro sito.
+        Mens Sana Formazione s.r.l. <strong>NON EFFETTUA PROFILAZIONE</strong>:
+        non effettuiamo attività di studio delle abitudini e delle scelte di
+        consumo degli utenti che navigano nel nostro sito internet.
       </p>
+      <p>In ogni caso, ecco qualche informazione utile:</p>
+
+      <h3>1. Cosa sono i cookie?</h3>
       <p>
         I cookie sono piccoli file di testo che i siti visitati dagli utenti
-        inviano ai loro terminali, dove vengono memorizzati per essere poi
-        ritrasmessi agli stessi siti alla visita successiva. In assenza di
-        cookie e di strumenti di tracciamento, in conformità alle Linee guida
-        del Garante per la protezione dei dati personali del 10 giugno 2021,
-        non è necessario alcun banner di richiesta del consenso.
+        inviano ai loro terminali, ove vengono memorizzati per essere poi
+        ritrasmessi agli stessi siti alla visita successiva. I cookie delle c.d.
+        "terze parti" vengono impostati da un sito web diverso da quello che
+        l'utente sta visitando: su ogni sito possono essere presenti elementi
+        che risiedono su server diversi da quello del sito visitato (es.
+        immagini, mappe, suoni, link a pagine web di altri domini).
+      </p>
+
+      <h3>2. A cosa servono i cookie?</h3>
+      <p>
+        I cookie sono usati per differenti finalità: esecuzione di
+        autenticazioni informatiche, monitoraggio di sessioni, memorizzazione di
+        informazioni su specifiche configurazioni riguardanti gli utenti che
+        accedono al server al fine di consentire la corretta navigazione della
+        pagina web, memorizzazione delle preferenze, ecc.
+      </p>
+
+      <h3>3. Cosa sono i cookie "tecnici"?</h3>
+      <p>
+        Sono i cookie che servono a consentire una corretta navigazione delle
+        pagine web o che consentono di rendere fruibile un servizio richiesto
+        dall'utente. Questi cookie non vengono utilizzati per scopi ulteriori e
+        sono normalmente trasferiti dal titolare del sito web sul terminale
+        dell'utente. Senza il ricorso a tali cookie alcune operazioni non
+        potrebbero essere compiute o sarebbero più complesse e/o meno sicure. Ad
+        esempio, nelle attività di home banking (visualizzazione dell'estratto
+        conto, bonifici, pagamento di bollette, ecc.) i cookie che consentono di
+        effettuare e mantenere l'identificazione dell'utente nell'ambito della
+        sessione risultano indispensabili.
+      </p>
+
+      <h3>4. I cookie "analytics" sono cookie "tecnici"?</h3>
+      <p>
+        No. Il Garante (cfr. provvedimento dell'8 maggio 2014) ha precisato che
+        possono essere assimilati ai cookie tecnici soltanto se utilizzati a fini
+        di ottimizzazione del sito direttamente dal titolare del sito stesso. Si
+        potranno raccogliere informazioni in forma aggregata sul numero degli
+        utenti e su come questi visitano il sito. Se i cookie analytics
+        rispettano queste condizioni, ad essi si applicano le stesse regole
+        previste per i cookie tecnici in tema di informativa e consenso.
+      </p>
+
+      <h3>5. Cosa sono i cookie "di profilazione"?</h3>
+      <p>
+        A differenza di quelli indicati nei punti che precedono, i cookie di
+        profilazione sono i cookie utilizzati per tracciare la navigazione
+        dell'utente in rete e creare profili sui suoi gusti, abitudini, scelte,
+        ecc. Mediante questi cookie vengono trasmessi al terminale dell'utente
+        messaggi pubblicitari in linea con le preferenze già manifestate dallo
+        stesso utente nella navigazione online.
+      </p>
+
+      <h3>6. È necessario il consenso dell'utente per l'installazione dei cookie sul suo terminale?</h3>
+      <p>
+        Dipende dalle finalità per le quali i cookie vengono usati, ovvero se si
+        tratta di cookie "tecnici" o di "profilazione". Per l'installazione dei
+        primi, ossia cookie tecnici o altresì detti "di sistema", non è richiesto
+        il consenso degli utenti, mentre è necessario dare l'informativa (ai
+        sensi dell'art. 13 GDPR). Al contrario, per quanto riguarda invece i
+        cookie di profilazione, questi possono essere installati sul terminale
+        dell'utente soltanto se quest'ultimo abbia espresso il proprio libero
+        consenso dopo essere stato debitamente informato mediante "modalità
+        semplificate".
+      </p>
+
+      <h3>7. In che modo il titolare del sito deve fornire l'informativa mediante "modalità semplificata" e richiedere il consenso all'uso dei cookie di profilazione?</h3>
+      <p>
+        Come stabilito dal Garante nel provvedimento indicato al punto n. 4 che
+        precede, l'informativa va impostata su due livelli. Nel momento in cui
+        l'utente accede a un sito web (sulla home page o su qualunque altra
+        pagina) deve immediatamente comparire un banner contenente una prima
+        informativa "breve", la richiesta di consenso all'uso dei cookie e un
+        link per accedere ad un'informativa più "estesa". In questa pagina
+        l'utente potrà reperire maggiori e più dettagliate informazioni sui
+        cookies utilizzati dal sito e scegliere quali specifici cookie
+        autorizzare.
+      </p>
+
+      <h3>8. Come deve essere realizzato il banner?</h3>
+      <p>
+        Il banner deve avere dimensioni tali da coprire in parte il contenuto
+        della pagina web che l'utente sta visitando e deve poter essere eliminato
+        soltanto tramite un intervento attivo dell'utente.
+      </p>
+
+      <h3>9. Quali indicazioni deve contenere il banner?</h3>
+      <p>
+        Qualora la pagina web si avvalga dell'utilizzo di cookie di profilazione,
+        il banner deve specificare che il sito utilizza cookie di profilazione ed
+        eventualmente anche di "terze parti" che consentono di inviare messaggi
+        pubblicitari in linea con le preferenze dell'utente. Deve contenere il
+        link all'informativa estesa e l'indicazione che, tramite quel link, è
+        possibile negare il consenso all'installazione di qualunque cookie di
+        profilazione. Deve precisare che se l'utente sceglie di proseguire
+        "saltando" il banner, acconsente all'uso dei cookie di profilazione.
+      </p>
+
+      <h3>10. In che modo può essere documentata l'acquisizione del consenso effettuata tramite l'uso del banner?</h3>
+      <p>
+        Per tenere traccia del consenso acquisito il titolare del sito può
+        avvalersi di un apposito cookie tecnico, sistema non particolarmente
+        invasivo e che non richiede a sua volta un ulteriore consenso. In
+        presenza di tale "documentazione" non è necessario che l'informativa
+        breve sia riproposta alla seconda visita dell'utente sul sito, ferma
+        restando la possibilità per quest'ultimo di negare il consenso e/o
+        modificare in ogni momento e in maniera agevole le proprie opzioni, ad
+        esempio tramite accesso all'informativa estesa, che deve essere quindi
+        linkabile da ogni pagina del sito.
+      </p>
+
+      <h3>11. Il consenso online all'uso dei cookie può essere chiesto solo tramite l'uso del banner?</h3>
+      <p>
+        No. I titolari dei siti hanno sempre la possibilità di ricorrere a
+        modalità diverse da quella individuata dal Garante nel provvedimento
+        sopra indicato purché le modalità prescelte presentino tutti i requisiti
+        di validità del consenso richiesti dalla legge.
+      </p>
+
+      <h3>12. L'obbligo di usare il banner grava anche sui titolari di siti che utilizzano solo cookie tecnici?</h3>
+      <p>
+        No. In questo caso, il titolare del sito può dare l'informativa agli
+        utenti con le modalità che ritiene più idonee (ad esempio mediante
+        l'inserimento delle relative indicazioni nella privacy policy indicata
+        nel sito).
+      </p>
+
+      <h3>13. Cosa deve indicare l'informativa "estesa"?</h3>
+      <p>
+        Deve contenere tutti gli elementi previsti dalla legge, descrivere
+        analiticamente le caratteristiche e le finalità dei cookie installati dal
+        sito e consentire all'utente di selezionare/deselezionare i singoli
+        cookie. Deve includere il link aggiornato alle informative e ai moduli di
+        consenso delle terze parti con le quali il titolare ha stipulato accordi
+        per l'installazione di cookie tramite il proprio sito. Deve richiamare,
+        infine, la possibilità per l'utente di manifestare le proprie opzioni sui
+        cookie anche attraverso le impostazioni del browser utilizzato.
+      </p>
+
+      <h3>14. Chi è tenuto a fornire l'informativa e a richiedere il consenso per l'uso dei cookie?</h3>
+      <p>
+        Il titolare del sito web che installa cookie di profilazione. Per i
+        cookie di terze parti installati tramite il sito, gli obblighi di
+        informativa e consenso gravano sulle terze parti, ma il titolare del
+        sito, quale intermediario tecnico tra queste e gli utenti, è tenuto a
+        inserire nell'informativa "estesa" i link aggiornati alle informative e
+        ai moduli di consenso delle terze parti stesse.
       </p>
 
       <p class="policy-version">
-        Informativa Privacy &amp; Cookie Policy: versione 3.0 aggiornata al 16
-        luglio 2026 (aggiorna la versione 2.0 del 18 gennaio 2020).
+        Informativa Privacy &amp; Cookies Policy: versione 2.0 aggiornata al 18
+        gennaio 2020, integrata con l'indicazione dei fornitori di servizi del
+        sito.
       </p>
     </div>
   </section>
@@ -208,6 +401,11 @@ import Base from '../layouts/Base.astro';
     margin-bottom: 0.6rem;
   }
   .policy h2:first-child { margin-top: 0; }
+  .policy h3 {
+    font-size: var(--fs-400);
+    margin-top: 1.6rem;
+    margin-bottom: 0.4rem;
+  }
   .policy p,
   .policy li {
     color: var(--grigio-700);
