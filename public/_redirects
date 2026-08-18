@@ -1,0 +1,16 @@
+# Rimandi dagli indirizzi del vecchio sito Drupal (18/08/2026).
+# Google ha ancora in indice gli URL /it/... e /en/..., che qui non esistono:
+# senza questi rimandi chi arriva dai risultati di ricerca finisce sulla 404.
+# Le regole piu' specifiche vanno PRIMA di quelle generiche.
+
+/it/corsi/iscrizione-ai-corsi  /contatti/    301
+/it/contatti                   /contatti/    301
+/en/contatti                   /contatti/    301
+/it/corsi                      /formazione/  301
+/en/corsi                      /formazione/  301
+/it/corsi/*                    /formazione/  301
+/en/corsi/*                    /formazione/  301
+/it                            /             301
+/en                            /             301
+/it/*                          /             301
+/en/*                          /             301
