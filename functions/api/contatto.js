@@ -68,13 +68,7 @@ export async function onRequestPost({ request, env }) {
     return tornaAlForm('errore');
   }
 
-  // ⚠️ TEMPORANEO 18/08/2026: diagnostica del modulo contatti.
-  // Risponde con il motivo esatto del rifiuto SOLO a chi manda la parola
-  // chiave concordata. Da rimuovere appena il modulo funziona.
-  const diagnostica = campo('debug', 40) === 'MSF-DIAG-18AGO';
-
   if (!env.BREVO_API_KEY) {
-    if (diagnostica) return new Response('DIAG: BREVO_API_KEY assente', { status: 200 });
     return tornaAlForm('errore');
   }
 
@@ -113,13 +107,8 @@ export async function onRequestPost({ request, env }) {
         textContent: testo,
       }),
     });
-    if (diagnostica) {
-      const corpo = await risposta.text();
-      return new Response(`DIAG: stato ${risposta.status} | ${corpo}`, { status: 200 });
-    }
     if (!risposta.ok) return tornaAlForm('errore');
-  } catch (e) {
-    if (diagnostica) return new Response(`DIAG: eccezione ${e}`, { status: 200 });
+  } catch {
     return tornaAlForm('errore');
   }
 
