@@ -594,14 +594,22 @@ const livelli = [
     flex-direction: column;
     gap: 0.4rem;
     position: relative;
+    /* ⛔ Spazio in alto UGUALE su tutte e tre le card, non solo su quella
+       consigliata: serve per l'etichetta, e se lo si mette solo alla card
+       centrale i tre titoli non sono piu' allineati. */
+    padding-top: 3rem;
   }
   .livello--featured {
     border: 2px solid var(--rosso);
     box-shadow: var(--shadow-lg);
   }
+  /* ⛔ L'etichetta sta DENTRO la card, appesa al bordo superiore.
+     Non puo' sporgere sopra il bordo: `.spot` (lo spotlight che segue il
+     mouse, aggiunto in global.css il 06/08) impone `overflow: hidden` e
+     taglierebbe tutto cio' che esce, come e' successo il 20/08. */
   .livello__tag {
     position: absolute;
-    top: -0.85rem;
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
     white-space: nowrap;
@@ -609,8 +617,8 @@ const livelli = [
     color: var(--bianco);
     font-size: var(--fs-200);
     font-weight: 700;
-    padding: 0.25rem 0.9rem;
-    border-radius: 999px;
+    padding: 0.3rem 1.1rem 0.35rem;
+    border-radius: 0 0 999px 999px;
     letter-spacing: 0.03em;
   }
   .livello h3 { font-size: var(--fs-600); }
