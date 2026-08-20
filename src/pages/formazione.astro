@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { aree, areeSuRichiesta, consulenze } from '../data/corsi.js';
+import { aree, areeSuRichiesta, consulenze, mostraPrezzo } from '../data/corsi.js';
 
 const fmtPrezzo = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 ---
@@ -55,7 +55,11 @@ const fmtPrezzo = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
               <h4>{corso.titolo}</h4>
               <p class="corso__sotto">{corso.sottotitolo}</p>
               <p class="corso__prezzo">
-                {fmtPrezzo(corso.prezzo)} € <small>+ IVA</small>
+                {mostraPrezzo(corso) ? (
+                  <>{fmtPrezzo(corso.prezzo)} € <small>+ IVA</small></>
+                ) : (
+                  <small>Quota su richiesta</small>
+                )}
               </p>
               <span class="corso__link">Scopri il corso →</span>
             </a>

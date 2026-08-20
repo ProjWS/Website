@@ -1,6 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { corsi, LINKEDIN_URL } from '../../data/corsi.js';
+import { corsi, LINKEDIN_URL, mostraPrezzo } from '../../data/corsi.js';
 
 export function getStaticPaths() {
   return corsi.map((corso) => ({ params: { slug: corso.slug }, props: { corso } }));
@@ -81,7 +81,11 @@ const fmtPrezzo = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
       <aside class="scheda-side reveal">
         <div class="side-card spot">
           <p class="side-card__label">Quota di iscrizione</p>
-          <p class="side-card__prezzo">{fmtPrezzo(corso.prezzo)} € <small>+ IVA</small></p>
+          {mostraPrezzo(corso) ? (
+            <p class="side-card__prezzo">{fmtPrezzo(corso.prezzo)} € <small>+ IVA</small></p>
+          ) : (
+            <p class="side-card__prezzo side-card__prezzo--richiesta">Su richiesta</p>
+          )}
           <ul class="side-card__meta">
             <li>{corso.durataVideo}</li>
             <li>{corso.durataStudio}</li>
@@ -117,7 +121,13 @@ const fmtPrezzo = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
             <a href={`/corsi/${c.slug}/`} class="card correlato spot reveal" style={`--d: ${i * 0.08}s`}>
               <span class="badge">{c.cod}</span>
               <h3>{c.titolo}</h3>
-              <p class="correlato__prezzo">{fmtPrezzo(c.prezzo)} € <small>+ IVA</small></p>
+              <p class="correlato__prezzo">
+                {mostraPrezzo(c) ? (
+                  <>{fmtPrezzo(c.prezzo)} € <small>+ IVA</small></>
+                ) : (
+                  <small>Quota su richiesta</small>
+                )}
+              </p>
               <span class="correlato__cta">Vai alla scheda →</span>
             </a>
           ))}
@@ -324,6 +334,7 @@ const fmtPrezzo = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     margin-block: 0.3rem 0.9rem;
   }
   .side-card__prezzo small { font-size: var(--fs-300); color: var(--grigio-500); font-weight: 600; }
+  .side-card__prezzo--richiesta { font-size: var(--fs-500); color: var(--grigio-700); }
   .side-card__meta {
     list-style: none;
     margin-bottom: 1.2rem;
