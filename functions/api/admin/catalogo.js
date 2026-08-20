@@ -20,7 +20,7 @@
 //                       permesso "Contents: Read and write". Da salvare come
 //                       Secret, mai come variabile in chiaro.
 
-import { verificaSessione } from '../../../src/server/sessione.js';
+import { verificaSessione, configurazioneCompleta } from '../../../src/server/sessione.js';
 
 const REPO = 'ProjWS/Website';
 const PERCORSO = 'src/data/catalogo.json';
@@ -101,7 +101,11 @@ async function leggiDaGitHub(env) {
   return { dati: JSON.parse(testo), sha: meta.sha };
 }
 
-export async function onRequestGet({ request, env }) {
+export async function onRequestGet({ request, env, next }) {
+  // ⛔ Se l'area non e' configurata, questa API deve rispondere come /admin:
+  // la 404 del sito. Una risposta diversa direbbe a un estraneo che qui c'e'
+  // un'area riservata, solo spenta.
+  if (!configurazioneCompleta(env)) return next();
   const accesso = await verificaSessione(request, env);
   if (!accesso.ok) return risposta({ errore: accesso.motivo }, 403);
   if (!env.GITHUB_TOKEN) return risposta({ errore: 'Collegamento a GitHub non configurato' }, 500);
@@ -114,7 +118,8 @@ export async function onRequestGet({ request, env }) {
   }
 }
 
-export async function onRequestPut({ request, env }) {
+export async function onRequestPut({ request, env, next }) {
+  if (!configurazioneCompleta(env)) return next();
   const accesso = await verificaSessione(request, env);
   if (!accesso.ok) return risposta({ errore: accesso.motivo }, 403);
   if (!env.GITHUB_TOKEN) return risposta({ errore: 'Collegamento a GitHub non configurato' }, 500);
