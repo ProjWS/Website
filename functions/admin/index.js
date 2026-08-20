@@ -8,13 +8,14 @@
 import { verificaAccesso } from '../../src/server/access.js';
 import { paginaAdmin } from '../../src/server/admin-html.js';
 
-export async function onRequestGet({ request, env }) {
+export async function onRequestGet(contesto) {
+  const { request, env, next } = contesto;
   const accesso = await verificaAccesso(request, env);
   if (!accesso.ok) {
-    return new Response('Not found', {
-      status: 404,
-      headers: { 'content-type': 'text/plain; charset=utf-8' },
-    });
+    // ⛔ Non una 404 qualsiasi: si lascia rispondere il sito, che serve la
+    // SUA pagina "Pagina non trovata". Una 404 diversa dalle altre sarebbe
+    // gia' un indizio che a quell'indirizzo c'e' qualcosa.
+    return next();
   }
   return new Response(paginaAdmin, {
     headers: {
