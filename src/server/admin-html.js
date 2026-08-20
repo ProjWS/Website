@@ -87,6 +87,7 @@ export const paginaAdmin = `<!doctype html>
   <span class="spazio"></span>
   <span class="stato" id="stato">Carico il catalogo…</span>
   <button class="btn btn--rosso" id="salva" disabled>Salva e pubblica</button>
+  <button class="btn" id="esci">Esci</button>
 </header>
 <main id="contenuto">
   <p class="nota">Un attimo…</p>
@@ -347,6 +348,12 @@ export const paginaAdmin = `<!doctype html>
       elSalva.disabled = false;
       mostraErrori('Non sono riuscito a contattare il server. Riprova.');
     });
+  });
+
+  document.getElementById('esci').addEventListener('click', function () {
+    if (cambiato && !confirm('Hai modifiche non salvate. Esci lo stesso?')) return;
+    cambiato = false;
+    fetch('/admin/esci', { method: 'POST' }).then(function () { window.location.reload(); });
   });
 
   fetch('/api/admin/catalogo').then(function (r) {

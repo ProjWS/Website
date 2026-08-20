@@ -14,13 +14,13 @@
 // Variabili d'ambiente (Cloudflare Pages > Settings > Variables and secrets,
 // ambiente Production). Senza queste, la funzione rifiuta tutto:
 //
-//   ACCESS_TEAM_DOMAIN  dominio Zero Trust, es. "mensana.cloudflareaccess.com"
-//   ACCESS_AUD          tag AUD dell'applicazione Access su /admin
+//   ADMIN_EMAILS        chi puo' entrare (vedi src/server/sessione.js)
+//   SESSION_SECRET      Secret, firma codici e sessioni
 //   GITHUB_TOKEN        token GitHub "fine-grained", SOLO su ProjWS/Website,
 //                       permesso "Contents: Read and write". Da salvare come
 //                       Secret, mai come variabile in chiaro.
 
-import { verificaAccesso } from '../../../src/server/access.js';
+import { verificaSessione } from '../../../src/server/sessione.js';
 
 const REPO = 'ProjWS/Website';
 const PERCORSO = 'src/data/catalogo.json';
@@ -102,7 +102,7 @@ async function leggiDaGitHub(env) {
 }
 
 export async function onRequestGet({ request, env }) {
-  const accesso = await verificaAccesso(request, env);
+  const accesso = await verificaSessione(request, env);
   if (!accesso.ok) return risposta({ errore: accesso.motivo }, 403);
   if (!env.GITHUB_TOKEN) return risposta({ errore: 'Collegamento a GitHub non configurato' }, 500);
 
@@ -115,7 +115,7 @@ export async function onRequestGet({ request, env }) {
 }
 
 export async function onRequestPut({ request, env }) {
-  const accesso = await verificaAccesso(request, env);
+  const accesso = await verificaSessione(request, env);
   if (!accesso.ok) return risposta({ errore: accesso.motivo }, 403);
   if (!env.GITHUB_TOKEN) return risposta({ errore: 'Collegamento a GitHub non configurato' }, 500);
 
