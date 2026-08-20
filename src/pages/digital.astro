@@ -114,7 +114,7 @@ const livelli = [
           altrove. È lì che interveniamo, in modo semplice e comprensibile.
         </p>
       </div>
-      <div class="grid grid--2">
+      <div class="grid grid--2 grid--servizi">
         {servizi.map((s, i) => (
           <div class="card servizio reveal spot" style={`--d: ${i * 0.08}s`}>
             <span class="servizio__icona" aria-hidden="true" set:html={icone[s.icona]} />
@@ -572,6 +572,15 @@ const livelli = [
   }
   .digital-hero .btn--ghost { border-color: var(--grigio-700); color: var(--bianco); }
   .digital-hero .btn--ghost:hover { border-color: var(--bianco); }
+
+  /* ⛔ Le quattro card vanno 2x2. La griglia standard `.grid--2` e'
+     `auto-fit`, e su schermo largo ci fa stare tre colonne: la quarta card
+     resta sola in fondo e la sezione sembra incompiuta. Qui le colonne sono
+     fissate a due. */
+  .grid--servizi { grid-template-columns: 1fr; }
+  @media (min-width: 48rem) {
+    .grid--servizi { grid-template-columns: repeat(2, 1fr); }
+  }
 
   .servizio { display: flex; gap: 1.1rem; align-items: flex-start; }
   .servizio__icona {
