@@ -93,6 +93,11 @@ const nCorsi = aree.reduce((n, a) => n + a.corsi.length, 0);
           <span class="ramo__cta">Scopri la consulenza →</span>
         </a>
       </div>
+      <p class="ramo-extra reveal">
+        Ci occupiamo anche della presenza online delle piccole attività, con
+        <a href="/digital/">Mens Sana Digital</a>: siti vetrina, menu digitali
+        e materiali grafici.
+      </p>
     </div>
   </section>
 
@@ -288,6 +293,21 @@ const nCorsi = aree.reduce((n, a) => n + a.corsi.length, 0);
   .ramo h3 { font-size: var(--fs-600); }
   .ramo p { color: var(--grigio-700); flex-grow: 1; }
   .ramo__cta { font-weight: 700; color: var(--rosso); }
+
+  /* Rimando volutamente discreto al ramo digitale */
+  .ramo-extra {
+    margin-top: 1.6rem;
+    text-align: center;
+    font-size: var(--fs-300);
+    color: var(--grigio-500);
+  }
+  .ramo-extra a {
+    font-weight: 700;
+    color: var(--grigio-900);
+    border-bottom: 1px solid var(--rosso);
+    transition: color var(--transition);
+  }
+  .ramo-extra a:hover { color: var(--rosso); }
 
   .metodo {
     border-top: 2px solid var(--grigio-900);
